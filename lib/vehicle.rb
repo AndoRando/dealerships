@@ -35,6 +35,16 @@ class Vehicle
     @v_id
   end
 
+  define_singleton_method(:find_id) do |id_number|
+    id_search_result = nil
+    @@vehicles.each() do |vehicle|
+      if vehicle.id().eql?(id_number.to_i())
+        id_search_result = vehicle
+      end
+    end
+    id_search_result
+  end
+
   define_method(:age) do
     present_year = Time.new().year()
     present_year.-(@v_year)

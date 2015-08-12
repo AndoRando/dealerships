@@ -47,6 +47,16 @@ describe(Vehicle) do
     end
   end
 
+  describe('#find_id') do
+    it('returns a vehicle by its id number') do
+      brennwalds_car = Vehicle.new("Nissan", "Versa", 2012)
+      brennwalds_car.save()
+      austins_car = Vehicle.new("Hyundai", "Accent", 2009)
+      austins_car.save()
+      expect(Vehicle.find_id(austins_car.id())).to(eq(austins_car))
+    end
+  end
+
   describe('#clear') do
     it('empties the Vehicle class array') do
       austins_car = Vehicle.new("Hyundai", "Accent", 2009)
