@@ -53,4 +53,15 @@ describe(Vehicle) do
       expect(brennwalds_car.age()).to(eq(3))
     end
   end
+
+  describe('#worth_buying?') do
+    it('returns true if the car is of Asian origin and less than or equal to 15 years old') do
+      austins_car = Vehicle.new("Hyundai", "Accent", 2009)
+      expect(austins_car.worth_buying?()).to(eq(true))
+    end
+    it('returns false if the car is not of Asian origin and more than 15 years old') do
+      crap_car = Vehicle.new("Ford", "Focus", 1988)
+      expect(crap_car.worth_buying?()).to(eq(false))
+    end
+  end
 end

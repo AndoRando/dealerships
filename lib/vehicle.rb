@@ -34,4 +34,9 @@ class Vehicle
     present_year = Time.new().year()
     present_year.-(@v_year)
   end
+
+  define_method(:worth_buying?) do
+    good_cars = ["Hyundai", "Toyota", "Nissan", "Kia", "Mazda"]
+    good_cars.include?(@v_make).&(self.age().<=(15))
+  end
 end
