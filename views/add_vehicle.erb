@@ -1,0 +1,18 @@
+<h1>Add a vehicle to <%= @dealership.d_name() %></h1>
+
+<form action="/add_vehicle_success" method="post">
+  <div class="form-group">
+    <input id='d_id' type="hidden" name="d_id" value='<%= @dealership.d_id() %>'>
+
+    <label for="v_make"></label>
+    <input type="text" name="v_make" id="v_make" class="form-control">
+
+    <label for="v_model"></label>
+    <input type="text" name="v_model" id="v_model" class="form-control">
+
+    <label for="v_year"></label>
+    <input type="text" name="v_year" id="v_year" class="form-control">
+
+    <button class="btn">Add Vehicle</button>
+  </div>
+</form>

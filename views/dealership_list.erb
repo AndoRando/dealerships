@@ -1,0 +1,6 @@
+<h1>Dealerships</h1>
+<ul>
+  <% @dealership_list.each() do |dealership| %>
+    <li><a href="/dealership_detail/<%= dealership.d_id() %>"><%=dealership.d_name() %></a></li>
+  <% end %>
+</ul>
