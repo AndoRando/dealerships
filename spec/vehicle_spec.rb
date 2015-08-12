@@ -39,6 +39,14 @@ describe(Vehicle) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of the vehicle') do
+      austins_car = Vehicle.new("Hyundai", "Accent", 2009)
+      austins_car.save()
+      expect(austins_car.id()).to(eq(1))
+    end
+  end
+
   describe('#clear') do
     it('empties the Vehicle class array') do
       austins_car = Vehicle.new("Hyundai", "Accent", 2009)
