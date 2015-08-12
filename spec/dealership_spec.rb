@@ -66,4 +66,13 @@ describe(Dealership) do
       expect(Dealership.find_d_id(courtneys_dealership.d_id())).to(eq(courtneys_dealership))
     end
   end
+
+  describe('#add_vehicle') do
+    it('') do
+      brennwalds_dealership = Dealership.new("Brennwald's Wall-to-Wall Auto-Hall")
+      brennwalds_car = Vehicle.new("Nissan", "Versa", 2012)
+      brennwalds_dealership.add_vehicle(brennwalds_car)
+      expect(brennwalds_dealership.d_cars()).to(eq([brennwalds_car]))
+    end
+  end
 end

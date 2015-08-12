@@ -41,4 +41,8 @@ class Dealership
     @d_cars
   end
 
+  define_method(:add_vehicle) do |vehicle|
+    @d_cars.push(vehicle)
+  end
+
 end
