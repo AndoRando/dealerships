@@ -16,4 +16,11 @@ describe(Dealership) do
       expect(brennwalds_dealership.d_id()).to(eq(1))
     end
   end
+
+  describe('#d_cars') do
+    it("initially returns an empty array of cars from the dealer's hips") do
+      austins_dealership = Dealership.new("Austin-and-out Auto Magisterium")
+      expect(austins_dealership.d_cars()).to(eq([]))
+    end
+  end
 end
