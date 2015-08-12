@@ -6,7 +6,7 @@ describe(Dealership) do
   before() do
     Dealership.clear()
   end
-  
+
   describe('#d_name') do
     it('returns the name of this particular dealershack') do
       austins_dealership = Dealership.new("Austin-and-out Auto Magisterium")
@@ -52,6 +52,18 @@ describe(Dealership) do
       austins_dealership.save()
       Dealership.clear()
       expect(Dealership.all()).to(eq([]))
+    end
+  end
+
+  describe('.find_d_id') do
+    it('searches all dealersharks for a given dealershark and returns a dealershark ID') do
+      brennwalds_dealership = Dealership.new("Brennwald's Wall-to-Wall Auto-Hall")
+      brennwalds_dealership.save()
+      courtneys_dealership = Dealership.new("Courtney's Corolla Corral-A-See-Um")
+      courtneys_dealership.save()
+      austins_dealership = Dealership.new("Austin-and-out Auto Magisterium")
+      austins_dealership.save()
+      expect(Dealership.find_d_id(courtneys_dealership.d_id())).to(eq(courtneys_dealership))
     end
   end
 end

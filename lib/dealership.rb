@@ -15,6 +15,16 @@ class Dealership
     @@dealerships = []
   end
 
+  define_singleton_method(:find_d_id) do |id|
+    dealership_search_result = nil
+    @@dealerships.each() do |dealership|
+      if dealership.d_id() == id
+        dealership_search_result = dealership
+      end
+    end
+    dealership_search_result
+  end
+
   define_method(:save) do
     @@dealerships.push(self)
   end
