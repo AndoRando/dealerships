@@ -21,8 +21,9 @@ end
 post('/dealership_list') do
   name = params.fetch('d_name')
   Dealership.new(name).save()
+  #@dealership = Dealership.find_d_id(params.fetch('id').to_i())
   @dealership_list = Dealership.all()
-  erb(:add_vehicle_success)
+  erb(:dealership_list)
 end
 
 get('/vehicle_detail/:id') do
